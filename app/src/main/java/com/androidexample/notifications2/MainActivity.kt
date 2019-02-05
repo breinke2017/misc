@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        notification_default.setAutoCancel(true)
-
         // Must call as soon as app starts--only for Oreo and above!
         createNotificationChannel()
 
@@ -37,6 +35,9 @@ class MainActivity : AppCompatActivity() {
             // Displays the notification_default
             displayNotification()
         }
+
+        notification_default.setAutoCancel(true)
+
     }
 
     private fun setupNotification() {
@@ -58,7 +59,6 @@ class MainActivity : AppCompatActivity() {
 
             // Set the intent that will fire when the user taps the notification_default
             setContentIntent(pendingIntent)
-            setAutoCancel(true)
         }
     }
 
